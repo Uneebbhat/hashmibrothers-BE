@@ -13,10 +13,10 @@ import { Request, Response } from "express";
 import { welcomeEmail } from "../templates/emails/welcomeEmail";
 
 export const signup = async (req: Request, res: Response) => {
-  const { error } = UserSignupSchema.validate(req.body);
-  if (error) {
-    ErrorHandler.send(res, 400, error.message);
-  }
+  // const { error } = UserSignupSchema.validate(req.body);
+  // if (error) {
+  //   ErrorHandler.send(res, 400, error.message);
+  // }
 
   try {
     const { name, email, password, role } = req.body;
@@ -59,10 +59,10 @@ export const signup = async (req: Request, res: Response) => {
 };
 
 export const login = async (req: Request, res: Response) => {
-  const { error } = UserLoginSchema.validate(req.body);
-  if (error) {
-    ErrorHandler.send(res, 400, error.message);
-  }
+  // const { error } = UserLoginSchema.validate(req.body);
+  // if (error) {
+  //   ErrorHandler.send(res, 400, error.message);
+  // }
 
   try {
     const { email, password } = req.body;

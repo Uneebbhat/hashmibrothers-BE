@@ -1,6 +1,7 @@
 import app from "./app";
-import { PORT } from "./config/constants";
 import logger from "./utils/logger";
+
+import { PORT } from "./config/constants";
 
 const port = PORT;
 

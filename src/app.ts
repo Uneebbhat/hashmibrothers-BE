@@ -1,14 +1,15 @@
-import express, { Application, Request, Response } from "express";
-import { morganStream } from "./utils/logger";
 import cors from "cors";
+import chalk from "chalk";
 import helmet from "helmet";
 import morgan from "morgan";
-import chalk from "chalk";
-import rateLimit from "express-rate-limit";
 import cookieParser from "cookie-parser";
+import rateLimit from "express-rate-limit";
 import dbConnect from "./services/dbConnect";
-import userRoutes from "./routes/userRoutes.routes";
 import ErrorHandler from "./utils/ErrorHandler";
+import userRoutes from "./routes/userRoutes.routes";
+
+import { morganStream } from "./utils/logger";
+import express, { Application, Request, Response } from "express";
 
 const app: Application = express();
 
