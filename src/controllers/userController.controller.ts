@@ -1,14 +1,15 @@
-import { Request, Response } from "express";
-import UserSignupSchema from "../schemas/UserSignupSchema.schema";
-import ErrorHandler from "../utils/ErrorHandler";
-import User from "../models/UserModel.model";
 import bcrypt from "bcrypt";
-import generateToken from "../helpers/generateToken";
-import setCookies from "../helpers/setCookies";
-import ResponseHandler from "../utils/ResponseHandler";
 import UserDTO from "../dto/UserDTO.dto";
-import UserLoginSchema from "../schemas/UserLoginSchema.schema";
+import User from "../models/UserModel.model";
 import sendEmail from "../services/sendEmail";
+import setCookies from "../helpers/setCookies";
+import ErrorHandler from "../utils/ErrorHandler";
+import generateToken from "../helpers/generateToken";
+import ResponseHandler from "../utils/ResponseHandler";
+import UserLoginSchema from "../schemas/UserLoginSchema.schema";
+import UserSignupSchema from "../schemas/UserSignupSchema.schema";
+
+import { Request, Response } from "express";
 import { welcomeEmail } from "../templates/emails/welcomeEmail";
 
 export const signup = async (req: Request, res: Response) => {
