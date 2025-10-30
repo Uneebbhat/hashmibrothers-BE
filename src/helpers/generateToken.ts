@@ -12,7 +12,7 @@ const generateToken = (res: Response, payload: any) => {
   const token = jwt.sign(
     {
       userId: payload._id,
-      name: payload.name,
+      fullName: payload.fullName,
       userEmail: payload.email,
       role: payload.role,
     },

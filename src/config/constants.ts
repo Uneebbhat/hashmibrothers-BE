@@ -10,6 +10,7 @@ const NODE_HOST = process.env.NODEMAILER_HOST;
 const NODE_SERVICE = process.env.NODEMAILER_SERVICE;
 const NODE_USER = process.env.NODEMAILER_USER;
 const NODE_PASS = process.env.NODEMAILER_PASS;
+const FRONTEND_URL = process.env.FRONTEND_URL;
 
 export {
   PORT,
@@ -20,4 +21,5 @@ export {
   NODE_SERVICE,
   NODE_USER,
   NODE_PASS,
+  FRONTEND_URL,
 };

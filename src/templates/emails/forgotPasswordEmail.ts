@@ -1,4 +1,4 @@
-const forgotPasswordEmail = (emailData: string) => ({
+const forgotPasswordEmail = (emailData: string, resetLink: string) => ({
   subject: "Reset Your Password – Action Required",
   body: `
     <html>
@@ -6,7 +6,7 @@ const forgotPasswordEmail = (emailData: string) => ({
         <h2>Hi ${emailData},</h2>
         <p>We received a request to reset your password for your <strong>[Your Company Name]</strong> account. If you made this request, click the button below to set a new password:</p>
         
-        <a href=[Reset Password Link] style="cursor: pointer;">
+        <a href=${resetLink} style="cursor: pointer;">
   <button
    style="display: inline-block; padding: 8px 16px; font-size: 16px; 
           color: #ffffff; background-color: #18181b; border-radius: 8px; text-decoration: none; 
