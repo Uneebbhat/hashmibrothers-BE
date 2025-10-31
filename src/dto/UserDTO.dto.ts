@@ -3,12 +3,12 @@ import { IUserDTO, Role } from "../interface/index";
 
 class UserDTO {
   _id: Types.ObjectId;
-  name: string;
+  fullName: string;
   email: string;
   role: Role;
   constructor(user: IUserDTO) {
     this._id = user._id;
-    this.name = user.name;
+    this.fullName = user.fullName;
     this.email = user.email;
     this.role = user.role;
   }

@@ -7,7 +7,7 @@ export enum Role {
 }
 
 export interface IUser {
-  name: string;
+  fullName: string;
   email: string;
   password: string;
   role: Role;
@@ -15,7 +15,7 @@ export interface IUser {
 
 export interface IUserDTO {
   _id: Types.ObjectId;
-  name: string;
+  fullName: string;
   email: string;
   role: Role;
 }

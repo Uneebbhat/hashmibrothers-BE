@@ -8,8 +8,10 @@ import dbConnect from "./services/dbConnect";
 import ErrorHandler from "./utils/ErrorHandler";
 import userRoutes from "./routes/userRoutes.routes";
 
+import { ExpressAuth } from "@auth/express";
 import { morganStream } from "./utils/logger";
 import express, { Application, Request, Response } from "express";
+import Google from "@auth/express/providers/google";
 
 const app: Application = express();
 
@@ -65,7 +67,8 @@ const limiter = rateLimit({
 app.use(limiter);
 
 // Middlewares
-app.use(cors({ origin: "*" }));
+// app.set("trust proxy", true);
+app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -76,6 +79,20 @@ app.use("/api", userRoutes);
 app.get("/", (req, res) => {
   res.send("Hello");
 });
+
+// app.use(
+//   "/auth",
+//   ExpressAuth({
+//     secret: process.env.AUTH_SECRET!,
+//     trustHost: true,
+//     providers: [
+//       Google({
+//         clientId: process.env.AUTH_GOOGLE_ID!,
+//         clientSecret: process.env.AUTH_GOOGLE_SECRET!,
+//       }),
+//     ],
+//   })
+// );
 
 app.all("/*splat", (req: Request, res: Response) => {
   ErrorHandler.send(res, 404, `The URL ${req.originalUrl} doesn't exist`);
