@@ -7,11 +7,12 @@ import rateLimit from "express-rate-limit";
 import dbConnect from "./services/dbConnect";
 import ErrorHandler from "./utils/ErrorHandler";
 import userRoutes from "./routes/userRoutes.routes";
+import Google from "@auth/express/providers/google";
+import productRoutes from "./routes/productRoutes.routes";
 
 import { ExpressAuth } from "@auth/express";
 import { morganStream } from "./utils/logger";
 import express, { Application, Request, Response } from "express";
-import Google from "@auth/express/providers/google";
 
 const app: Application = express();
 
@@ -74,7 +75,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // Routes
-app.use("/api", userRoutes);
+app.use("/api", userRoutes, productRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello");

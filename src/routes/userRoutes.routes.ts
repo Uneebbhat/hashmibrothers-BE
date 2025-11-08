@@ -1,13 +1,13 @@
 import UserSignupSchema from "../schemas/UserSignupSchema.schema";
 
 import { Router } from "express";
-import { validateBody } from "../helpers/validateBody";
 import {
   forgotPassword,
   login,
   resetPassword,
   signup,
 } from "../controllers/userController.controller";
+import { validateBody } from "../helpers/validateBody";
 import UserLoginSchema from "../schemas/UserLoginSchema.schema";
 // import authentication from "../middlewares/authentication.middleware";
 // import authorization from "../middlewares/authorization.middleware";

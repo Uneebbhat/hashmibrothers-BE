@@ -1,4 +1,4 @@
-import { Role } from ".";
+import { Category, Role } from ".";
 
 export interface ISignupBody {
   fullName: string;
@@ -18,4 +18,14 @@ export interface IForgotPasswordBody {
 
 export interface IResetPassowrdBody {
   password: string;
+}
+
+export interface IProductBody {
+  productName: string;
+  productDescription: string;
+  category: Category;
+  quantity: string;
+  inStock: number;
+  price: number;
+  // productImage: string;
 }

@@ -11,6 +11,9 @@ const NODE_SERVICE = process.env.NODEMAILER_SERVICE;
 const NODE_USER = process.env.NODEMAILER_USER;
 const NODE_PASS = process.env.NODEMAILER_PASS;
 const FRONTEND_URL = process.env.FRONTEND_URL;
+const CLOUD_API_KEY = process.env.CLOUDINARY_API_KEY;
+const CLOUD_API_SECRET = process.env.CLOUDINARY_API_SECRET;
+const CLOUD_NAME = process.env.CLOUDINARY_NAME;
 
 export {
   PORT,
@@ -22,4 +25,7 @@ export {
   NODE_USER,
   NODE_PASS,
   FRONTEND_URL,
+  CLOUD_API_KEY,
+  CLOUD_API_SECRET,
+  CLOUD_NAME,
 };
